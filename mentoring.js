@@ -93,6 +93,12 @@ console.log(finalPrice);
 // To demonstrate hoisting, call this function and log its result on the line above
 // where the function is actually defined in your code.
 
+console.log(sayGoodbye());
+
+function sayGoodbye() {
+  return "Goodbye!";
+}
+
 // Task 7: Global and Local Scope
 // Topic: Introduction to Scopes
 // Instructions:
@@ -103,6 +109,17 @@ console.log(finalPrice);
 // Inside the function, try logging both variables.
 // Outside the function, try logging both variables.
 // Observe which one causes a ReferenceError and comment out the line that breaks the code.
+
+const secretCode = "XYZ123";
+function testScope() {
+  const localPin = "9999";
+  console.log(secretCode);
+  console.log(localPin);
+}
+testScope();
+console.log(secretCode);
+console.log(localPin);
+// console.log(localPin); // This will cause a ReferenceError because localPin is not defined in the global scope.
 
 // Task 8: Shadowed Variables
 // Topic: Shadowed Variables
@@ -115,6 +132,14 @@ console.log(finalPrice);
 // and then log playerScore outside the function.
 // Notice how the global variable remains unchanged.
 
+let playerScore = 10;
+const updateScore = () => {
+  let playerScore = 50; // shadowing
+  console.log(playerScore);
+};
+updateScore();
+console.log(playerScore);
+
 // Task 9: Executing Functions Indirectly (Callbacks)
 // Topic: Executing Functions Indirectly
 // Instructions:
@@ -123,6 +148,16 @@ console.log(finalPrice);
 // Inside executeCallback, execute the callbackFunc.
 // Call executeCallback and pass alertUser as
 // an argument (remember to pass it indirectly, without parentheses).
+
+function alertUser() {
+  console.log("Action completed!");
+}
+
+function executeCallback(callbackFunc) {
+  executeCallback();
+}
+
+executeCallback(alertUser);
 
 // Task 10: Indirect vs. Direct Execution with setTimeout
 // Topic: Indirect vs. Direct Execution
