@@ -56,6 +56,7 @@ introduce_that("boka", "IT");
 // Use ES6 object destructuring directly inside the function parameters
 // to extract these values and log them to the console.
 // Example object to pass: { brand: 'Toyota', model: 'Corolla', year: 2022 }
+
 const car = {
   brand: "Toyota",
   model: "Corolla",
@@ -66,6 +67,7 @@ const displayCarDetails = ({ brand, model, year }) => {
   console.log(`Brand: ${brand}, Model: ${model}, Year: ${year}`);
 };
 displayCarDetails(car);
+
 // Task 5: Returning Values vs Logging
 // Topic: Returning Values
 // Instructions:
@@ -75,6 +77,14 @@ displayCarDetails(car);
 // Call the function with a price of 200 and a discount of 15,
 // store the returned result in a variable named finalPrice,
 // and then console.log(finalPrice) outside the function.
+
+const calculateDiscount = (price, discountPercentage) => {
+  const discountAmount = (price * discountPercentage) / 100;
+  return price - discountAmount;
+};
+
+const finalPrice = calculateDiscount(200, 15);
+console.log(finalPrice);
 
 // Task 6: Hoisting
 // Topic: The Importance of Code Order
