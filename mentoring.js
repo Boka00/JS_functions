@@ -8,6 +8,20 @@
 // that does exactly the same thing and
 // assign it to a const variable named addNumbersExpr.
 
+// **** function declaration
+function addNumbers(a, b) {
+  return a + b;
+}
+
+console.log(addNumbers(2, 5));
+
+// **** function expression
+const addNumbers2 = (a, b) => {
+  return a + b;
+};
+
+console.log(addNumbers2(2, 3));
+
 // Task 2: Arrow Functions
 // Topic: Modern ES6 Features
 // Instructions:
@@ -15,6 +29,8 @@
 // Task 1 into a modern ES6 Arrow Function.
 // Assign it to a const variable named addNumbersArrow.
 // Keep the syntax as short as possible.
+
+const addNumbersArrow = (a, b) => a + b;
 
 // Task 3: Parameters and Arguments
 // Topic: Adding a Custom Function
@@ -26,6 +42,11 @@
 // After defining it, call the function and
 // pass your own name and profession as arguments.
 
+const introduce_that = (firstName, profession) => {
+  console.log(`Hello, my name is ${firstName} and I am a ${profession}.`);
+};
+introduce_that("boka", "IT");
+
 // Task 4: Function Destructuring
 // Topic: Modern ES6 Features
 // Instructions:
@@ -35,7 +56,16 @@
 // Use ES6 object destructuring directly inside the function parameters
 // to extract these values and log them to the console.
 // Example object to pass: { brand: 'Toyota', model: 'Corolla', year: 2022 }
+const car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2022,
+};
 
+const displayCarDetails = ({ brand, model, year }) => {
+  console.log(`Brand: ${brand}, Model: ${model}, Year: ${year}`);
+};
+displayCarDetails(car);
 // Task 5: Returning Values vs Logging
 // Topic: Returning Values
 // Instructions:
